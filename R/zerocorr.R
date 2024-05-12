@@ -21,7 +21,7 @@ is_parens_outside_doublebar <- function(x, .xsiblings) {
 is_doublebar_inside_parens <- function(x, .xparents, n = 1) {
   identical(x, quote(`||`)) && {
     object <- evalq(object, parent.frame(n))
-    doublebar_parent <- as.integer(head(.xparents, -2))
+    doublebar_parent <- as.integer(utils::head(.xparents, -2))
     list(object[[doublebar_parent]][[1]]) %in% expression(`(`, zerocorr)
   }
 }

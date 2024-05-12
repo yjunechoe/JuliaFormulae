@@ -1,0 +1,37 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# JuliaFormulae
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+``` r
+# install.packages("devtools")
+devtools::install_github("yjunechoe/JuliaFormulae")
+```
+
+## Example
+
+```{r}
+library(JuliaFormulae)
+```
+
+
+```{r}
+julia_formula(y ~ x)
+
+julia_formula(y ~ a + I(a ^ 2) + (a || b))
+```

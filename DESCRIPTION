@@ -7,9 +7,12 @@ Authors@R:
 Description: Metaprogramming utilites to convert R model formulae to
     'Julia' equivalents.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 4.1.0)
 Imports: 
     rrapply,
-    stats
+    stats,
+    utils
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1

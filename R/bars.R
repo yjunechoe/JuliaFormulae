@@ -8,7 +8,7 @@ find_bars <- function(fm) {
   if (has_bar(fm)) {
     rrapply(
       fm,
-      class = "language",
+      classes = "language",
       condition = \(x) list(x[[1]]) %in% expression(`|`, `||`),
       how = "flatten"
     )
@@ -19,7 +19,7 @@ no_bars <- function(fm) {
   if (has_bar(fm)) {
     fm <- rrapply(
       y ~ fm,
-      class = "language",
+      classes = "language",
       condition = \(x) {
         identical(x[[1]], quote(`(`)) &&
           list(x[[2]][[1]]) %in% expression(`|`, `||`)
@@ -27,7 +27,7 @@ no_bars <- function(fm) {
       f = \(x) 0,
       how = "replace"
     )
-    fm <- update(fm, ~ .)
+    fm <- stats::update(fm, ~ .)
     environment(fm) <- globalenv()
   }
   fm
