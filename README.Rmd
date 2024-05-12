@@ -29,9 +29,15 @@ devtools::install_github("yjunechoe/JuliaFormulae")
 library(JuliaFormulae)
 ```
 
-
 ```{r}
-julia_formula(y ~ x)
-
-julia_formula(y ~ a + I(a ^ 2) + (a || b))
+julia_formula(y ~ a + I(a^2) + b + a:b  + (a || g) + (b | g))
 ```
+
+## Supported conversions
+
+- Zero correlation: `(term || group)` -> `zerocorr()`
+- Protection: e.g., `I(term^2)` -> `protect(term^2)`
+- Interaction terms: `a:b` -> `a&b`
+
+TBD:
+- `Symbol()` protection for invalid variable names
