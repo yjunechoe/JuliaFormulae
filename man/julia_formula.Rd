@@ -4,10 +4,10 @@
 \alias{julia_formula}
 \title{Convert R formula to Julia syntax}
 \usage{
-julia_formula(fm)
+julia_formula(x)
 }
 \arguments{
-\item{fm}{A formula object}
+\item{x}{A formula object}
 }
 \value{
 A Julia-compatible formula object
