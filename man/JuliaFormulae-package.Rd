@@ -6,7 +6,7 @@
 \alias{JuliaFormulae-package}
 \title{JuliaFormulae: Translate R model formulae to 'Julia' syntax}
 \description{
-Metaprogramming utilites to convert R model formulae to 'Julia' equivalents.
+Metaprogramming utilites for converting R regression model formulae to 'Julia' equivalents.
 }
 \author{
 \strong{Maintainer}: June Choe \email{jchoe001@gmail.com} (\href{https://orcid.org/0000-0002-0701-921X}{ORCID})

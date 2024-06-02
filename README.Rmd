@@ -21,23 +21,32 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/yjunechoe/JuliaFormulae/branch/main/graph/badge.svg)](https://app.codecov.io/gh/yjunechoe/JuliaFormulae?branch=main)
 <!-- badges: end -->
 
+A utility package for converting R regression model formula to Julia Julia [GLM.jl](https://github.com/JuliaStats/GLM.jl) and
+[MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) syntax.
+
+See [`{jlme}`](https://github.com/yjunechoe/jlme) for an example application.
+
+## Installation
+
 ``` r
 # install.packages("devtools")
 devtools::install_github("yjunechoe/JuliaFormulae")
 ```
 
+```{r}
+library(JuliaFormulae)
+```
+
 ## Supported conversions
 
-- Zero correlation: `(term || group)` -> `zerocorr()`
+- Zero correlation: `(term || group)` -> `zerocorr(term | group)`
 - Protection: e.g., `I(term^2)` -> `protect(term^2)`
 - Interaction terms: `a:b` -> `a&b`
 
 ## Example
 
 ```{r}
-library(JuliaFormulae)
-```
-
-```{r}
-julia_formula(y ~ a + I(a^2) + b + a:b  + (a || g) + (b | g))
+julia_formula(
+  y ~ a + I(a^2) + b + a:b  + (a || g) + (b | g)
+)
 ```

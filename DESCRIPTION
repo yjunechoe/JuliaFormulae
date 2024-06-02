@@ -4,8 +4,8 @@ Version: 0.0.0.9000
 Authors@R: 
     person("June", "Choe", , "jchoe001@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0701-921X"))
-Description: Metaprogramming utilites to convert R model formulae to
-    'Julia' equivalents.
+Description: Metaprogramming utilites for converting R regression model
+    formulae to 'Julia' equivalents.
 License: MIT + file LICENSE
 Depends: 
     R (>= 4.1.0)
