@@ -13,7 +13,7 @@ coverage](https://codecov.io/gh/yjunechoe/JuliaFormulae/branch/main/graph/badge.
 <!-- badges: end -->
 
 A utility package for converting R regression model formula to Julia
-Julia [GLM.jl](https://github.com/JuliaStats/GLM.jl) and
+[GLM.jl](https://github.com/JuliaStats/GLM.jl) and
 [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) syntax.
 
 See [`{jlme}`](https://github.com/yjunechoe/jlme) for an example

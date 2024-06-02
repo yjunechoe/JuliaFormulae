@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/yjunechoe/JuliaFormulae/branch/main/graph/badge.svg)](https://app.codecov.io/gh/yjunechoe/JuliaFormulae?branch=main)
 <!-- badges: end -->
 
-A utility package for converting R regression model formula to Julia Julia [GLM.jl](https://github.com/JuliaStats/GLM.jl) and
+A utility package for converting R regression model formula to Julia [GLM.jl](https://github.com/JuliaStats/GLM.jl) and
 [MixedModels.jl](https://github.com/JuliaStats/MixedModels.jl) syntax.
 
 See [`{jlme}`](https://github.com/yjunechoe/jlme) for an example application.
