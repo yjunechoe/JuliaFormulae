@@ -1,7 +1,7 @@
 has_bar <- function(fm, bar = c("both", "single", "double")) {
   bar <- match.arg(bar)
   bars <- switch(bar, both = c("|", "||"), single = c("|"), double = "||")
-  all(bars %in% all.names(fm))
+  any(bars %in% all.names(fm))
 }
 
 find_bars <- function(fm) {
