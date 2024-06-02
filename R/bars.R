@@ -17,14 +17,15 @@ find_bars <- function(fm) {
 
 no_bars <- function(fm) {
   if (has_bar(fm)) {
+    intercept <- attr(stats::terms(fm), "intercept")
     fm <- rrapply(
-      y ~ fm,
+      fm,
       classes = "language",
       condition = \(x) {
         identical(x[[1]], quote(`(`)) &&
           list(x[[2]][[1]]) %in% expression(`|`, `||`)
       },
-      f = \(x) 0,
+      f = \(x) intercept,
       how = "replace"
     )
     fm <- stats::update(fm, ~ .)
