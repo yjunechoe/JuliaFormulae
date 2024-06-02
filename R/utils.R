@@ -1,5 +1,5 @@
 formula_parse_data <- function(fm) {
-  getParseData(parse(text = deparse1(fm)))
+  utils::getParseData(parse(text = deparse1(fm), keep.source = TRUE))
 }
 
 formula_symbols <- function(fm) {
@@ -10,6 +10,6 @@ formula_symbols <- function(fm) {
 check_symbols <- function(fm) {
   invalid <- grep("[.]", formula_symbols(fm), value = TRUE)
   if (length(invalid) > 0) {
-    stop("Invalid Julia symbols: ", toString(invalid), call. = FALSE)
+    stop("Invalid Julia symbol(s): ", toString(invalid), call. = FALSE)
   }
 }
