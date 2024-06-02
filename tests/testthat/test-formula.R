@@ -1,7 +1,3 @@
-expect_formula_eq <- function(x, y) {
-  expect_equal(x, y, ignore_formula_env = TRUE)
-}
-
 test_that("errors on invalid inputs", {
 
   expect_formula_eq(y ~ x, julia_formula(y ~ x))
