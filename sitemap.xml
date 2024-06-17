@@ -16,7 +16,13 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
     <loc>/reference/JuliaFormulae-package.html</loc>
+  </url>
+  <url>
+    <loc>/reference/has_bars.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
