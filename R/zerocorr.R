@@ -1,5 +1,6 @@
+#' @keywords internal
 use_zerocorr <- function(fm) {
-  if (has_bar(fm, "double")) {
+  if (has_bars(fm, "double")) {
     fm <- rrapply(
       fm,
       condition = function(x, .xparents, .xsiblings) {
@@ -13,11 +14,13 @@ use_zerocorr <- function(fm) {
   fm
 }
 
+#' @keywords internal
 is_parens_outside_doublebar <- function(x, .xsiblings) {
   identical(x, quote(`(`)) &&
     identical(.xsiblings[[2]][[1]], quote(`||`))
 }
 
+#' @keywords internal
 is_doublebar_inside_parens <- function(x, .xparents, n = 1) {
   identical(x, quote(`||`)) && {
     object <- evalq(object, parent.frame(n))

@@ -1,3 +1,4 @@
+#' @keywords internal
 use_protect <- function(fm) {
   rrapply(
     fm,

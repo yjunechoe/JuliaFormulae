@@ -1,3 +1,4 @@
+#' @keywords internal
 use_ampersand <- function(fm) {
   rrapply(
     fm,
