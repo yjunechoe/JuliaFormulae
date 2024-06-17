@@ -6,7 +6,7 @@
 \alias{JuliaFormulae-package}
 \title{JuliaFormulae: Translate R regression model formulae to 'Julia' syntax}
 \description{
-Metaprogramming utilites for converting R regression model formulae to 'Julia' equivalents, via modifications to the abstract syntax tree. Supports translations in zero correlation random effects syntax, protection of expressions to be evaluated as-is, interaction terms, and more. Accepts strings or R formula objects and returns modified R formula objects where possible (or modified as string, if not representable in R).
+Metaprogramming utilities for converting R regression model formulae to 'Julia' equivalents, via modifications to the abstract syntax tree. Supports translations in zero correlation random effects syntax, protection of expressions to be evaluated as-is, interaction terms, and more. Accepts strings or R formula objects and returns a modified R formula objects where possible (or a modified string, if not a valid formula in R).
 }
 \author{
 \strong{Maintainer}: June Choe \email{jchoe001@gmail.com} (\href{https://orcid.org/0000-0002-0701-921X}{ORCID})
