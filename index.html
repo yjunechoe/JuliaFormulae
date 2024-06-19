@@ -78,22 +78,35 @@
 <h2 id="supported-conversions">Supported conversions<a class="anchor" aria-label="anchor" href="#supported-conversions"></a>
 </h2>
 <ul>
-<li>Zero correlation: <code>(term || group)</code> -&gt; <code>zerocorr(term | group)</code>
+<li>
+<p>Zero correlation: <code>(term || group)</code> -&gt; <code>zerocorr(term | group)</code></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/julia_formula.html">julia_formula</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span> <span class="op">+</span> <span class="op">(</span><span class="va">x</span> <span class="op">||</span> <span class="va">g</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; y ~ x + zerocorr(x | g)</span></span></code></pre></div>
 </li>
-<li>Protection: e.g., <code>I(term^2)</code> -&gt; <code>protect(term^2)</code>
+<li>
+<p>Protection: e.g., <code>I(term^2)</code> -&gt; <code>protect(term^2)</code></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/julia_formula.html">julia_formula</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">x</span> <span class="op">*</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; y ~ x + protect(x * 2)</span></span></code></pre></div>
 </li>
-<li>Interaction terms: <code>a:b</code> -&gt; <code>a&amp;b</code>
+<li>
+<p>Interaction terms: <code>a:b</code> -&gt; <code>a&amp;b</code></p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/julia_formula.html">julia_formula</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">a</span> <span class="op">+</span> <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">:</span><span class="va">b</span><span class="op">)</span></span>
+<span><span class="co">#&gt; y ~ a + b + (a &amp; b)</span></span></code></pre></div>
 </li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/julia_formula.html">julia_formula</a></span><span class="op">(</span></span>
-<span>  <span class="va">y</span> <span class="op">~</span> <span class="va">a</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">a</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">:</span><span class="va">b</span>  <span class="op">+</span> <span class="op">(</span><span class="va">a</span> <span class="op">||</span> <span class="va">g</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">b</span> <span class="op">|</span> <span class="va">g</span><span class="op">)</span></span>
+<span>  <span class="va">y</span> <span class="op">~</span> <span class="va">a</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">a</span> <span class="op">*</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">:</span><span class="va">b</span>  <span class="op">+</span> <span class="op">(</span><span class="va">a</span> <span class="op">||</span> <span class="va">g</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">b</span> <span class="op">|</span> <span class="va">g</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; y ~ a + protect(a^2) + b + (a &amp; b) + zerocorr(a | g) + (b | g)</span></span></code></pre></div>
+<span><span class="co">#&gt; y ~ a + protect(a * 2) + b + (a &amp; b) + zerocorr(a | g) + (b | </span></span>
+<span><span class="co">#&gt;     g)</span></span></code></pre></div>
 </div>
 </div>
   </div>
