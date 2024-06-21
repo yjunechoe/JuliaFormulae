@@ -39,19 +39,19 @@ library(JuliaFormulae)
 
 ## Supported conversions
 
-- Zero correlation: `(term || group)` -> `zerocorr(term | group)`
+- Zero correlation:
     ```{r}
     julia_formula(y ~ x + (x || g))
     ```
 
-- Protection: e.g., `I(term^2)` -> `protect(term^2)`
+- Protection:
     ```{r}
     julia_formula(y ~ x + I(x * 2))
     ```
 
-- Interaction terms: `a:b` -> `a&b`
+- Interaction terms:
     ```{r}
-    julia_formula(y ~ a + b + a:b)
+    julia_formula(y ~ a:b)
     ```
 
 ## Example
