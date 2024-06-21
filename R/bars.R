@@ -41,6 +41,7 @@ find_bars <- function(x) {
 #' @export
 no_bars <- function(x) {
   if (has_bars(x)) {
+    e <- environment(x)
     intercept <- attr(stats::terms(x), "intercept")
     x <- rrapply(
       x,
@@ -53,7 +54,7 @@ no_bars <- function(x) {
       how = "replace"
     )
     x <- stats::update(x, ~ .)
-    environment(x) <- globalenv()
+    environment(x) <- e
   }
   x
 }

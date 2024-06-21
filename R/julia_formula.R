@@ -12,10 +12,11 @@
 julia_formula <- function(x) {
   stopifnot("`x` must be a formula" = inherits(x, "formula"))
   check_symbols(x)
+  e <- environment(x)
   x <- x |>
     use_zerocorr() |>
     use_protect() |>
     use_ampersand()
-  environment(x) <- globalenv()
+  environment(x) <- e
   x
 }
