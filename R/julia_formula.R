@@ -10,7 +10,12 @@
 #'
 #' julia_formula(y ~ a + I(a ^ 2) + (a || b))
 julia_formula <- function(x) {
-  stopifnot("`x` must be a formula" = inherits(x, "formula"))
+  stopifnot(
+    "`x` must be formula or string" = inherits(x, "formula") || is.character(x)
+  )
+  if (is.character(x)) {
+    x <- stats::as.formula(x, env = parent.frame())
+  }
   check_symbols(x)
   e <- environment(x)
   x <- x |>
