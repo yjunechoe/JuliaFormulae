@@ -1,5 +1,5 @@
 Package: JuliaFormulae
-Title: Translate R regression model formulae to 'Julia' Syntax
+Title: Translate R Regression Model Formulae to 'Julia' Syntax
 Version: 0.1.0
 Authors@R: 
     person("June", "Choe", , "jchoe001@gmail.com", role = c("aut", "cre"),
