@@ -5,6 +5,7 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
+library(knitr)
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -36,6 +37,16 @@ devtools::install_github("yjunechoe/JuliaFormulae")
 ```{r}
 library(JuliaFormulae)
 ```
+
+```{r, echo = FALSE}
+# Suppress printing of rmarkdown env
+knit_print.formula <- function(x, ...) {
+  environment(x) <- globalenv()
+  asNamespace("stats")$print.formula(x, ...)
+}
+registerS3method("knit_print", "formula", knit_print.formula)
+```
+
 
 ## Supported conversions
 
