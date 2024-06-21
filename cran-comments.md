@@ -5,3 +5,5 @@
 * This is a new release.
 
 * Removed usage of `globalenv()` to avoid modifying the global environment
+
+* Added reference and citation to the Julia programming language
