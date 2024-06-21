@@ -67,9 +67,11 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">julia_formula</span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">a</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y ~ a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x559e6727f630&gt;</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">julia_formula</span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">a</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">a</span> <span class="op">^</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">a</span> <span class="op">||</span> <span class="va">b</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y ~ a + protect(a^2) + zerocorr(a | b)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: 0x559e6727f630&gt;</span>
 </code></pre></div>
     </div>
   </div>
