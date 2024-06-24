@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/JuliaFormulae)](https://CRAN.R-project.org/package=JuliaFormulae)
 [![R-CMD-check](https://github.com/yjunechoe/JuliaFormulae/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yjunechoe/JuliaFormulae/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/yjunechoe/JuliaFormulae/branch/main/graph/badge.svg)](https://app.codecov.io/gh/yjunechoe/JuliaFormulae?branch=main)
