@@ -9,9 +9,11 @@ Description: Metaprogramming utilities for converting R regression model
     modifications to the abstract syntax tree. Supports translations in
     zero correlation random effects syntax, protection of expressions to
     be evaluated as-is, interaction terms, and more. Accepts strings or R
-    formula objects and returns modified R formula objects where
-    possible (or a modified string, if not a valid formula in R).
+    formula objects and returns modified R formula objects where possible
+    (or a modified string, if not a valid formula in R).
 License: MIT + file LICENSE
+URL: https://github.com/yjunechoe/JuliaFormulae
+BugReports: https://github.com/yjunechoe/JuliaFormulae/issues
 Depends: 
     R (>= 4.1.0)
 Imports: 
